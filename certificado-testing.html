@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado de Testing - Level Up Gamer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1E90FF 0%, #00008B 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .certificate {
+            background: white;
+            max-width: 1000px;
+            width: 100%;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border: 10px solid #39FF14;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #1E90FF;
+            padding-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            color: #1E90FF;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .header h2 {
+            font-size: 24px;
+            color: #39FF14;
+            margin-bottom: 20px;
+        }
+        
+        .header p {
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .content {
+            margin: 40px 0;
+        }
+        
+        .project-name {
+            text-align: center;
+            font-size: 32px;
+            color: #1E90FF;
+            font-weight: bold;
+            margin: 30px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #e3f2fd 0%, #f1f8ff 100%);
+            border-radius: 10px;
+            border-left: 5px solid #39FF14;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #1E90FF 0%, #0066cc 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .stat-card h3 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #39FF14;
+        }
+        
+        .stat-card p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        
+        .tests-list {
+            margin: 30px 0;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        
+        .tests-list h3 {
+            color: #1E90FF;
+            font-size: 24px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #39FF14;
+            padding-bottom: 10px;
+        }
+        
+        .test-component {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid #39FF14;
+        }
+        
+        .test-component h4 {
+            color: #1E90FF;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .test-component .badge {
+            display: inline-block;
+            background: #39FF14;
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .test-item {
+            padding: 8px 0;
+            color: #555;
+        }
+        
+        .test-item:before {
+            content: "✅ ";
+            color: #39FF14;
+            font-weight: bold;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 30px;
+            border-top: 3px solid #1E90FF;
+        }
+        
+        .footer .date {
+            font-size: 20px;
+            color: #1E90FF;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .footer .signature {
+            margin-top: 30px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .success-badge {
+            background: #39FF14;
+            color: #000;
+            font-size: 32px;
+            font-weight: bold;
+            padding: 20px 40px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.3);
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .certificate {
+                box-shadow: none;
+                border: 2px solid #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="certificate">
+        <div class="header">
+            <h1>🏆 CERTIFICADO DE TESTING</h1>
+            <h2>Jasmine + Karma</h2>
+            <p>Este documento certifica la implementación exitosa de pruebas unitarias</p>
+        </div>
+        
+        <div class="content">
+            <div class="project-name">
+                🎮 Level Up Gamer - E-Commerce React
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>32</h3>
+                    <p>Tests Ejecutados</p>
+                </div>
+                <div class="stat-card">
+                    <h3>32</h3>
+                    <p>Tests Exitosos</p>
+                </div>
+                <div class="stat-card">
+                    <h3>0</h3>
+                    <p>Tests Fallidos</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Tasa de Éxito</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <div class="success-badge">
+                    ✅ TODOS LOS TESTS APROBADOS
+                </div>
+            </div>
+            
+            <div class="tests-list">
+                <h3>📋 Componentes Testeados</h3>
+                
+                <div class="test-component">
+                    <h4>🎮 ProductCard Component</h4>
+                    <span class="badge">8 TESTS</span>
+                    <div class="test-item">Renderizado de nombre y descripción</div>
+                    <div class="test-item">Formato de precios en CLP</div>
+                    <div class="test-item">Manejo de imágenes y placeholders</div>
+                    <div class="test-item">Funcionalidad de agregar al carrito</div>
+                    <div class="test-item">Enlaces y navegación correctos</div>
+                </div>
+                
+                <div class="test-component">
+                    <h4>🧭 Header Component</h4>
+                    <span class="badge">7 TESTS</span>
+                    <div class="test-item">Renderizado del logo y navegación</div>
+                    <div class="test-item">Enlaces con URLs correctas</div>
+                    <div class="test-item">Icono del carrito de compras</div>
+                    <div class="test-item">Funcionalidad responsive</div>
+                </div>
+                
+                <div class="test-component">
+                    <h4>🛒 CartContext (Lógica de Negocio)</h4>
+                    <span class="badge">10 TESTS</span>
+                    <div class="test-item">Agregar y eliminar productos</div>
+                    <div class="test-item">Actualizar cantidades</div>
+                    <div class="test-item">Cálculo de totales y subtotales</div>
+                    <div class="test-item">Persistencia en localStorage</div>
+                    <div class="test-item">Limpiar carrito completo</div>
+                </div>
+                
+                <div class="test-component">
+                    <h4>🛍️ Cart Page</h4>
+                    <span class="badge">7 TESTS</span>
+                    <div class="test-item">Manejo de carrito vacío</div>
+                    <div class="test-item">Renderizado con productos</div>
+                    <div class="test-item">Navegación y breadcrumbs</div>
+                    <div class="test-item">Formato de precios en pesos chilenos</div>
+                </div>
+            </div>
+            
+            <div style="background: #e3f2fd; padding: 25px; border-radius: 15px; margin: 30px 0; border-left: 5px solid #1E90FF;">
+                <h3 style="color: #1E90FF; margin-bottom: 15px;">🔧 Configuración Técnica</h3>
+                <p style="color: #555; line-height: 1.8;">
+                    <strong>Framework:</strong> Jasmine + Karma<br>
+                    <strong>Navegador:</strong> Chrome Headless 141.0.0.0<br>
+                    <strong>Transpilador:</strong> Babel + Webpack<br>
+                    <strong>Testing Library:</strong> @testing-library/react<br>
+                    <strong>Tiempo de Ejecución:</strong> 0.082 segundos<br>
+                    <strong>Plataforma:</strong> Windows 10
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="date">
+                📅 Fecha de Ejecución: 20 de Octubre, 2025
+            </div>
+            <div class="signature">
+                <p>Testing implementado y verificado exitosamente</p>
+                <p style="margin-top: 20px; font-weight: bold; color: #1E90FF;">
+                    Framework: Jasmine + Karma | Estado: APROBADO ✅
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
