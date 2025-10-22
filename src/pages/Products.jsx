@@ -67,7 +67,7 @@ function Products() {
         {/* Filtros */}
         <section style={{
           backgroundColor: '#1E90FF',
-          padding: '30px',
+          padding: '20px',
           borderRadius: '15px',
           marginBottom: '40px',
           boxShadow: '0 4px 16px rgba(0,0,0,0.2)'
@@ -75,44 +75,85 @@ function Products() {
           <h2 style={{
             color: '#39FF14',
             fontFamily: "'Orbitron', sans-serif",
-            fontSize: '1.8rem',
+            fontSize: '1.5rem',
             marginBottom: '20px',
             textAlign: 'center'
           }}>
             Filtrar por Categoría
           </h2>
           
-          <div className="d-flex justify-content-center flex-wrap gap-2">
-            <ButtonGroup>
-              {categories.map(category => (
+          <Row className="g-2 justify-content-center">
+            {categories.map(category => (
+              <Col xs={6} sm={4} md={3} lg={2} key={category.id}>
                 <Button
-                  key={category.id}
                   onClick={() => handleCategoryChange(category.id)}
                   className={currentCategory === category.id ? 'btn-gamer' : 'btn-gamer-outline'}
                   style={{
                     fontFamily: "'Orbitron', sans-serif",
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    fontSize: '0.9rem',
+                    width: '100%',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    padding: '10px 8px'
                   }}
+                  title={category.name}
                 >
                   {category.name}
                 </Button>
-              ))}
-            </ButtonGroup>
+              </Col>
+            ))}
+          </Row>
+
+          {/* Indicador de productos filtrados */}
+          <div style={{
+            marginTop: '15px',
+            textAlign: 'center',
+            color: '#fff',
+            fontFamily: "'Orbitron', sans-serif",
+            fontSize: '0.95rem'
+          }}>
+            Mostrando <strong>{filteredProducts.length}</strong> producto{filteredProducts.length !== 1 ? 's' : ''}
           </div>
         </section>
 
         {/* Grid de Productos */}
         <section>
-          <h2 style={{
-            color: '#39FF14',
-            fontFamily: "'Orbitron', sans-serif",
-            fontSize: '1.8rem',
-            marginBottom: '30px'
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '30px',
+            flexWrap: 'wrap',
+            gap: '15px'
           }}>
-            {currentCategory === 'all' 
-              ? 'Todos los Productos' 
-              : `Categoría: ${categories.find(c => c.id === currentCategory)?.name}`}
-          </h2>
+            <h2 style={{
+              color: '#39FF14',
+              fontFamily: "'Orbitron', sans-serif",
+              fontSize: '1.8rem',
+              margin: 0
+            }}>
+              {currentCategory === 'all' 
+                ? 'Todos los Productos' 
+                : categories.find(c => c.id === currentCategory)?.name || 'Productos'}
+            </h2>
+
+            {currentCategory !== 'all' && (
+              <Button
+                variant="link"
+                onClick={() => handleCategoryChange('all')}
+                style={{
+                  color: '#1E90FF',
+                  fontFamily: "'Orbitron', sans-serif",
+                  textDecoration: 'none',
+                  fontSize: '0.9rem'
+                }}
+              >
+                🔄 Ver todos
+              </Button>
+            )}
+          </div>
 
           {currentProducts.length > 0 ? (
             <Row xs={1} sm={2} md={3} lg={4} className="g-4">
